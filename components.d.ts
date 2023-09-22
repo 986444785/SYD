@@ -7,10 +7,15 @@ export {}
 
 declare module 'vue' {
   export interface GlobalComponents {
+    Banner: typeof import('./src/components/banner/index.vue')['default']
+    ElAutocomplete: typeof import('element-plus/es')['ElAutocomplete']
     ElButton: typeof import('element-plus/es')['ElButton']
+    ElCarousel: typeof import('element-plus/es')['ElCarousel']
+    ElCarouselItem: typeof import('element-plus/es')['ElCarouselItem']
     Footer: typeof import('./src/components/footer/index.vue')['default']
     Header: typeof import('./src/components/header/index.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    Search: typeof import('./src/components/search/index.vue')['default']
   }
 }

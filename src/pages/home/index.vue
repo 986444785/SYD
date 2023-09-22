@@ -1,69 +1,34 @@
 <template>
-    home
-    <el-button type="danger">Danger</el-button>
+  <Header></Header>
+
+  <!-- home
+    <el-button type="danger">Danger</el-button> -->
+
+  <div class="base">
+
+    <div class="content">
+      <Banner @bannerIsClick="bannerClick"></Banner>
+      <Search/>
+      <Level></Level>
+    </div>
+  </div>
 </template>
 
 
 <script setup lang="ts">
-import { reject } from 'lodash';
-
-
-
-// function reuqest(num:number) {
-//     var pro = new Promise((resolve, reject) => {
-//         setTimeout(() => {
-//             resolve('ok' + num)
-//         }, 1000 * num);
-//         // reject(num)
-//     })
-//     return pro
-// }
-
-// reuqest(1).then((res) => {
-//     console.log('1111',res)
-//     return reuqest(2)
-// }).then((res) => {
-//     console.log('2222',res)
-
-// }).catch((err)=>{
-//     console.log('333',err)
-// })
-
-var age = 18
-
-console.log('开始1')
-
-const pro2 = new Promise((reslove, reject) => {
-
-    console.log('中间----2')
-
-    reslove('回调 ');
-})
-console.log('中啊啊啊啊啊')
-
-pro2.then((res) => {
-    console.log('收到回调 4', res);
-})
-
-console.log('结束3')
+ 
+import Header from '@/components/header/index.vue'
+import Banner from '@/components/banner/index.vue'
+import Search from '@/components/Search/index.vue'
+import Level from './level.vue'
 
 
 console.log('-----------------------------------------')
-
-
-
-Promise.resolve('Success!')
-  .then(data => {
-    return data.toUpperCase()
-  })
-  .then(data => {
-    console.log(data)
-    return data
-  })
-  .then(console.log)
-
  
 
+const bannerClick = (item:any) => {
+  console.log('bannerClick====== ', item)
+}
 
 
 
@@ -72,4 +37,15 @@ Promise.resolve('Success!')
 </script>
 
 
-<style scoped  lang="scss"></style>
+<style scoped  lang="scss">
+.base {
+  margin-top: 70px;
+}
+
+.content {
+  margin: 0 auto;
+  // color: palevioletred;
+  width: 1200px;
+  height: 2000px;
+}
+</style>
